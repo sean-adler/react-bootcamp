@@ -17,5 +17,5 @@ npm install
 ```
 
 ## Commands
-- *dev* - Runs a development server.
-- *test* - Runs static analysis and unit tests.
+- `npm run dev` - Runs a development server.
+- `npm run test` - Runs static analysis and unit tests.

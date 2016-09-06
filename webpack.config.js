@@ -7,7 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        'index': './src/part-one/index.js',
+        'index': './src/index.js',
         'vendor': ['react', 'react-dom']
     },
     module: {

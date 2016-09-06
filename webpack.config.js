@@ -7,14 +7,14 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        'index': './src/index.js',
+        'index': './src/index.jsx',
         'vendor': ['react', 'react-dom']
     },
     module: {
         loaders: [{
             include: path.join(__dirname, 'src'),
             loaders: ['babel'],
-            test: /\.js$/
+            test: /\.(js|jsx)$/
         }, {
             include: path.join(__dirname, 'src'),
             loader: ExtractTextPlugin.extract('style', 'css'),
@@ -28,5 +28,8 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('styles/bundle.css'),
         new webpack.optimize.CommonsChunkPlugin('vendor', 'scripts/vendor.bundle.js')
-    ]
+    ],
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    }
 };

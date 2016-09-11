@@ -5,7 +5,7 @@ import Comment from './comment';
 const CommentList = (props) => {
   const renderedComments = props.comments.map((comment, i) => (
     <Comment author={comment.author} key={i}>
-      <span>{comment.message}</span>
+      <span>{comment.text}</span>
     </Comment>
   ));
 

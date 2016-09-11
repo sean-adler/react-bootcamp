@@ -1,16 +1,16 @@
 [{
     "author": "Steve Jobs",
-    "message": "Some Jobs message."
+    "text": "Some Jobs text."
 }, {
     "author": "Bill Gates",
-    "message": "Some Gates message."
+    "text": "Some Gates text."
 }, {
     "author": "Mark Zuckerberg",
-    "message": "Some Zuckerberg message."
+    "text": "Some Zuckerberg text."
 }, {
     "author": "Elon Musk",
-    "message": "Some Musk message."
+    "text": "Some Musk text."
 }, {
    "author": "Larry Page",
-   "message": "Some Page message."
+   "text": "Some Page text."
 }]

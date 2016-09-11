@@ -8,10 +8,17 @@ class CommentApp extends React.Component {
     super(...args);
 
     this.state = { comments: [] };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.fetchData();
+  }
+
+  handleSubmit(comment) {
+    const comments = this.state.comments.concat([comment]);
+
+    this.setState({ comments });
   }
 
   fetchData() {
@@ -24,7 +31,7 @@ class CommentApp extends React.Component {
   render() {
     return (
       <div className="commentApp">
-        <CommentBox comments={this.state.comments} />
+        <CommentBox handleSubmit={this.handleSubmit} comments={this.state.comments} />
       </div>
     );
   }

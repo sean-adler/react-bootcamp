@@ -7,7 +7,7 @@ const CommentBox = (props) => (
   <div className="commentBox">
     <h1>Comments</h1>
     <CommentList comments={props.comments} />
-    <CommentForm />
+    <CommentForm handleSubmit={props.handleSubmit} />
   </div>
 );
 
@@ -16,6 +16,7 @@ CommentBox.propTypes = {
     author: PropTypes.string,
     message: PropTypes.string,
   })),
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default CommentBox;

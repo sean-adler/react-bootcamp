@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import './styles/comment-app.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

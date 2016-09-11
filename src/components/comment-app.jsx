@@ -7,11 +7,18 @@ class CommentApp extends React.Component {
   constructor(...args) {
     super(...args);
 
-    this.state = {comments: []};
+    this.state = { comments: [] };
   }
 
   componentDidMount() {
     this.fetchData();
+  }
+
+  fetchData() {
+    fetch('/data/comments.json')
+      .then((res) => res.json())
+      .then((comments) => this.setState({ comments }))
+      .catch(() => console.error('CommentApp: Could not fetch data.'));
   }
 
   render() {
@@ -20,10 +27,6 @@ class CommentApp extends React.Component {
         <CommentBox comments={this.state.comments} />
       </div>
     );
-  }
-
-  fetchData() {
-    const data = require('../data/comments');
   }
 }
 

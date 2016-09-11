@@ -1,8 +1,19 @@
 {
+    "env": {
+        "jest": true
+    },
     "extends": "airbnb",
+    "globals": {
+        "fetch": true
+    },
     "plugins": [
         "react",
         "jsx-a11y",
         "import"
-    ]
+    ],
+    "rules": {
+        "no-console": 0,
+        "import/no-extraneous-dependencies": 0,
+        "react/require-extension": 0
+    }
 }

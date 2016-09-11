@@ -1,11 +1,19 @@
 import React from 'react';
 
-const CommentForm = () => {
+class CommentForm extends React.Component {
+  constructor(...args) {
+    super(...args);
+
+    this.state = {};
+  }
+
+  render() {
     return (
-        <div className="commentForm">
-            Hello CommentForm
-        </div>
+      <div className="commentForm">
+        Hello CommentForm
+      </div>
     );
-};
+  }
+}
 
 export default CommentForm;

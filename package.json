@@ -34,7 +34,7 @@
     "cov": "jest --coverage",
     "dev": "webpack-dev-server --content-base=static --inline --hot",
     "build": "webpack",
-    "lint": "eslint src test",
+    "lint": "eslint src test --ext=.js --ext=.jsx",
     "unit": "jest",
     "test": "npm run lint && npm run cov"
   },

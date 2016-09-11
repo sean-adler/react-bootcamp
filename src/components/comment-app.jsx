@@ -1,7 +1,6 @@
 import React from 'react';
 
 import CommentBox from './comment-box';
-import '../styles/comment-app.css';
 
 class CommentApp extends React.Component {
   constructor(...args) {

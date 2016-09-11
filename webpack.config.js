@@ -8,7 +8,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         'index': './src/index.jsx',
-        'vendor': ['react', 'react-dom']
+        'vendor': ['react', 'react-dom', 'whatwg-fetch']
     },
     module: {
         loaders: [{

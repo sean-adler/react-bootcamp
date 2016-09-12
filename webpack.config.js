@@ -8,7 +8,7 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: {
-        'index': './src/index.jsx',
+        'index': './src/index.js',
         'vendor': ['react', 'react-dom', 'whatwg-fetch']
     },
     module: {

@@ -53,23 +53,23 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-      <div className="commentForm">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            onChange={this.handleAuthorChange}
-            placeholder="Your name..."
-            type="text"
-            value={this.state.author}
-          />
-          <input
-            onChange={this.handleTextChange}
-            placeholder="Your message..."
-            type="text"
-            value={this.state.text}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+      <form className="commentForm" onSubmit={this.handleSubmit}>
+        <input
+          className="commentInput"
+          onChange={this.handleAuthorChange}
+          placeholder="Your name..."
+          type="text"
+          value={this.state.author}
+        />
+        <input
+          className="commentInput"
+          onChange={this.handleTextChange}
+          placeholder="Your message..."
+          type="text"
+          value={this.state.text}
+        />
+        <button className="commentButton" type="submit">Submit</button>
+      </form>
     );
   }
 }

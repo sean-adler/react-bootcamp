@@ -1,5 +1,107 @@
-$color: white;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 body {
-  background-color: $color;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  height: 96vmin;
+  width: 56vmin;
+  box-shadow: 0 0 3rem rgba(black, 0.1);
+  overflow: hidden;
+
+  > h1 {
+    margin: 0;
+    font-size: 1rem;
+    padding: 1rem;
+    background: red;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  > .commentList {
+    flex: 1 1 auto;
+  }
+
+  > .commentForm {
+    flex: 0 0 auto;
+  }
+}
+
+.commentList {
+  display: block;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.comment {
+  margin-bottom: 1rem;
+
+  > .commentAuthor {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  > .commentText {
+    padding: 1rem;
+    background: blue;
+    color: white;
+  }
+}
+
+.commentAuthor {
+  font-size: 0.8rem;
+  color: #AAA;
+  font-weight: 700;
+}
+
+.commentForm {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.commentInput {
+  appearance: none;
+  background: transparent;
+  border: 1px solid gray;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+
+  + .commentInput {
+    margin-top: -1px;
+  }
+}
+
+.commentButton {
+  appearance: none;
+  display: block;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
 }

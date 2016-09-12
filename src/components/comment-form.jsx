@@ -1,81 +1,39 @@
 import React, { PropTypes } from 'react';
 
-class CommentForm extends React.Component {
-  constructor(...args) {
-    super(...args);
+const CommentForm = ({comment, onSave, onChange, isSaving}) => {
+  return (
+    <div className="commentForm">
+      <form>
+        <input
+          name="author"
+          onChange={onChange}
+          placeholder="Your name..."
+          type="text"
+          value={comment.author} />
 
-    this.state = {
-      author: '',
-      text: '',
-    };
+        <input
+          name="message"
+          onChange={onChange}
+          placeholder="Your message..."
+          type="text"
+          value={comment.message} />
 
-    this.handleAuthorChange = this.handleAuthorChange.bind(this);
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleAuthorChange(evt) {
-    const author = evt.target.value;
-
-    this.setState({ author });
-  }
-
-  handleTextChange(evt) {
-    const text = evt.target.value;
-
-    this.setState({ text });
-  }
-
-  handleSubmit(evt) {
-    evt.preventDefault();
-
-    const author = this.state.author;
-    const text = this.state.text;
-
-    if (!this.validForm()) {
-      return;
-    }
-
-    this.props.handleSubmit({ author, text });
-    this.clearForm();
-  }
-
-  validForm() {
-    return this.state.author && this.state.text;
-  }
-
-  clearForm() {
-    this.setState({
-      author: '',
-      text: '',
-    });
-  }
-
-  render() {
-    return (
-      <div className="commentForm">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            onChange={this.handleAuthorChange}
-            placeholder="Your name..."
-            type="text"
-            value={this.state.author}
-          />
-          <input
-            onChange={this.handleTextChange}
-            placeholder="Your message..."
-            type="text"
-            value={this.state.text}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    );
-  }
-}
+        <input
+          type="submit"
+          disabled={isSaving}
+          value={isSaving? 'Saving...' : 'Save'}
+          onClick={onSave} />
+      </form>
+    </div>
+  );
+};
 
 CommentForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
+  comment: React.PropTypes.object.isRequired,
+  onSave: React.PropTypes.func.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+  saving: React.PropTypes.bool,
+  errors: React.PropTypes.object
 };
 
 export default CommentForm;

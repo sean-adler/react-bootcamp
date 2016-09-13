@@ -35,7 +35,8 @@ class CommentBox extends React.Component {
     this.setState({isSaving: true});
 
     this.props.actions.saveComment(this.state.comment).then(() => {
-      this.setState({isSaving: false});
+      let comment = { author: '', message: '' };
+      this.setState({comment, isSaving: false});
     });
   }
 

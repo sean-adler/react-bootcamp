@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const Comment = (props) => (
   <div className="comment">
     <h2 className="commentAuthor">{props.author}</h2>
-    {props.children}
+    <div className="commentText">{props.children}</div>
   </div>
 );
 

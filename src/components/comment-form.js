@@ -3,8 +3,9 @@ import React, { PropTypes } from 'react';
 const CommentForm = ({comment, onSave, onChange, isSaving}) => {
   return (
     <div className="commentForm">
-      <form>
+      <form className="commentForm" onSubmit={onSave}>
         <input
+          className="commentInput"
           name="author"
           onChange={onChange}
           placeholder="Your name..."
@@ -12,17 +13,19 @@ const CommentForm = ({comment, onSave, onChange, isSaving}) => {
           value={comment.author} />
 
         <input
+          className="commentInput"
           name="message"
           onChange={onChange}
           placeholder="Your message..."
           type="text"
           value={comment.message} />
 
-        <input
-          type="submit"
+        <button
+          className="commentButton"
           disabled={isSaving}
-          value={isSaving? 'Saving...' : 'Save'}
-          onClick={onSave} />
+          type="submit">
+          {isSaving? 'Saving...' : 'Save'}
+        </button>
       </form>
     </div>
   );

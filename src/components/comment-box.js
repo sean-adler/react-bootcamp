@@ -68,7 +68,7 @@ CommentBox.propTypes = {
     message: PropTypes.string,
   })),
   isLoading: PropTypes.bool.isRequired,
-  actions: PropTypes.obj.isRequired,
+  actions: PropTypes.objectOf(PropTypes.func).isRequired,
 };
 
 function mapStateToProps(state) {

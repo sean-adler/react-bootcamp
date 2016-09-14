@@ -25,6 +25,7 @@
     "eslint-plugin-import": "^1.14.0",
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.0",
+    "eslint-watch": "^2.1.14",
     "extract-text-webpack-plugin": "^1.0.1",
     "jest-cli": "^15.1.1",
     "node-sass": "~3.9.3",
@@ -43,7 +44,8 @@
     "cov": "jest --coverage",
     "dev": "webpack-dev-server --content-base=static --inline --hot",
     "build": "webpack",
-    "lint": "eslint src test --ext=.js --ext=.jsx",
+    "lint": "esw src test --ext=.js --ext=.jsx",
+    "lint:watch": "npm run lint -- --watch",
     "unit": "jest",
     "test": "npm run lint && npm run cov"
   },

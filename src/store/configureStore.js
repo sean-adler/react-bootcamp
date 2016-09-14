@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import commentsReducer from '../reducers/commentsReducer';
 import thunk from 'redux-thunk';
+
+import commentsReducer from '../reducers/commentsReducer';
 
 export default function configureStore(initialState) {
   return createStore(
@@ -8,7 +9,7 @@ export default function configureStore(initialState) {
     initialState,
     compose(
       applyMiddleware(thunk),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
+      window.devToolsExtension ? window.devToolsExtension() : f => f  // eslint-disable-line
     )
   );
 }

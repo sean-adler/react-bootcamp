@@ -14,7 +14,7 @@ export function loadCommentsError(error) {
 }
 
 export function loadComments() {
-  return function(dispatch) {
+  return (dispatch) => {
     dispatch(loadCommentsRequest());
     return commentAPI.getAllComments().then(comments => {
       dispatch(loadCommentsSuccess(comments));
@@ -38,7 +38,7 @@ export function saveCommentError(error) {
 }
 
 export function saveComment(comment) {
-  return function(dispatch, getState) {
+  return (dispatch) => {
     dispatch(saveCommentRequest());
     return commentAPI.saveComment(comment).then(savedComment => {
       dispatch(saveCommentSuccess(savedComment));

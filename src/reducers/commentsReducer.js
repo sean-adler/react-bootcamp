@@ -1,31 +1,31 @@
 import * as types from '../actions/actionTypes';
 
 
-let initialState = {
+const initialState = {
   comments: [],
-  isLoading: false
+  isLoading: false,
 };
 
 export default function commentsReducer(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case types.LOAD_COMMENTS_REQUEST:
       return {
         ...state,
-        isLoading: true
-      }
+        isLoading: true,
+      };
 
     case types.LOAD_COMMENTS_SUCCESS:
       return {
         ...state,
         isLoading: false,
-        comments: action.comments
-      }
+        comments: action.comments,
+      };
 
     case types.SAVE_COMMENT_SUCCESS:
       return {
         ...state,
-        comments: [...state.comments, action.comment]
-      }
+        comments: [...state.comments, action.comment],
+      };
 
     default:
       return state;

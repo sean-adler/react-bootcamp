@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import Comment from './comment';
 
-const CommentList = ({comments, isLoading}) => {
+const CommentList = ({ comments, isLoading }) => {
   const renderedComments = comments.map((comment, i) => (
     <Comment author={comment.author} key={i}>
       <span>{comment.message}</span>
@@ -27,7 +27,7 @@ CommentList.propTypes = {
       message: PropTypes.string,
     })
   ),
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
 };
 
 export default CommentList;

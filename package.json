@@ -49,6 +49,6 @@
     "moduleNameMapper": {
       "^.+\\.(css|styl)$": "<rootDir>/test/mocks/style.js"
     },
-    "testRegex": "test/.*\\.jsx$"
+    "testRegex": "test/.*-test\\.js$"
   }
 }

@@ -8,36 +8,6 @@ class CommentForm extends React.Component {
       author: '',
       text: '',
     };
-
-    this.handleAuthorChange = this.handleAuthorChange.bind(this);
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleAuthorChange(evt) {
-    const author = evt.target.value;
-
-    this.setState({ author });
-  }
-
-  handleTextChange(evt) {
-    const text = evt.target.value;
-
-    this.setState({ text });
-  }
-
-  handleSubmit(evt) {
-    evt.preventDefault();
-
-    const author = this.state.author;
-    const text = this.state.text;
-
-    if (!this.validForm()) {
-      return;
-    }
-
-    this.props.handleSubmit({ author, text });
-    this.clearForm();
   }
 
   validForm() {
@@ -50,6 +20,32 @@ class CommentForm extends React.Component {
       text: '',
     });
   }
+
+  handleAuthorChange = (evt) => {
+    const author = evt.target.value;
+
+    this.setState({ author });
+  };
+
+  handleTextChange = (evt) => {
+    const text = evt.target.value;
+
+    this.setState({ text });
+  };
+
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    const author = this.state.author;
+    const text = this.state.text;
+
+    if (!this.validForm()) {
+      return;
+    }
+
+    this.props.handleSubmit({ author, text });
+    this.clearForm();
+  };
 
   render() {
     return (

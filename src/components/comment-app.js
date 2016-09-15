@@ -7,17 +7,10 @@ class CommentApp extends React.Component {
     super(...args);
 
     this.state = { comments: [] };
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.fetchData();
-  }
-
-  handleSubmit(comment) {
-    const comments = this.state.comments.concat([comment]);
-
-    this.setState({ comments });
   }
 
   fetchData() {
@@ -26,6 +19,12 @@ class CommentApp extends React.Component {
       .then((comments) => this.setState({ comments }))
       .catch(() => console.error('CommentApp: Could not fetch data.'));
   }
+
+  handleSubmit = (comment) => {
+    const comments = this.state.comments.concat([comment]);
+
+    this.setState({ comments });
+  };
 
   render() {
     return (

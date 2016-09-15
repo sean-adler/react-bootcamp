@@ -5,7 +5,7 @@ import CommentList from './comment-list';
 
 const CommentBox = (props) => (
   <div className="commentBox">
-    <h1>Comments</h1>
+    <h1 className="commentHeading">Comments</h1>
     <CommentList comments={props.comments} />
     <CommentForm handleSubmit={props.handleSubmit} />
   </div>

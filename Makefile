@@ -46,8 +46,9 @@ $(COMPILED_STATIC):
 
 
 babel: $(NODE_MODULES) $(COMPILED_STATIC)
-	$(NODE_MODULES)/.bin/babel/index.js \
-		$(PROJECT_NAME)/static/js/ \
+	mkdir -p $(COMPILED_STATIC)/js
+	$(NODE_MODULES)/.bin/babel/ \
+		$(PROJECT_NAME)/static/js/index.js \
 		--out-file $(COMPILED_STATIC)/js/index.js \
 		--presets es2015,react
 

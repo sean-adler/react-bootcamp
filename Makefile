@@ -21,7 +21,7 @@ venv: $(VENV_ACTIVATE)
 
 
 runserver: venv
-	$(WITH_VENV) python manage.py runserver 5050 --settings=jstools.settings
+	$(WITH_VENV) python manage.py runserver 5050 --settings=$(PROJECT_NAME).settings
 
 
 shell: venv
@@ -29,7 +29,7 @@ shell: venv
 
 
 migrate: venv
-	$(WITH_VENV) python manage.py migrate --settings=jstools.settings
+	$(WITH_VENV) python manage.py migrate --settings=$(PROJECT_NAME).settings
 
 
 ##############

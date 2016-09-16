@@ -1,0 +1,19 @@
+{
+  "name": "react-bootcamp",
+  "version": "0.0.5",
+  "description": "A multi-part React bootcamp.",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "webpack": "^1.13.2"
+  },
+  "license": "MIT"
+}

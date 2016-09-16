@@ -1,7 +1,10 @@
 class Greeting extends React.Component {
   render() {
     return (
-      <span>{ "O sh*t, waddup" }</span>
+      <div>
+        <h2>{ "Howdy!" }</h2>
+        <div>{ "O sh*t, waddup" }</div>
+      </div>
     );
   }
 }
